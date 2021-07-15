@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_text">40sp</dimen>
-    <dimen name="button_margin">32dp</dimen>
-    <dimen name="textView_height">256dp</dimen>
+    <dimen name="button_textSize">40sp</dimen>
+    <dimen name="button_marginStart">1dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="button_height">100dp</dimen>
+    <dimen name="editText_textSize">80sp</dimen>
+    <dimen name="editText_height">256dp</dimen>
     <item name="background_alpha" format="float" type="dimen">0.7</item>
 </resources>

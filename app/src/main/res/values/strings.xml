@@ -15,5 +15,5 @@
     <string name="_minus">-</string>
     <string name="_divide">/</string>
     <string name="_multiply">*</string>
-    <string name="_result">5+5=10</string>
+    <string name="_clear">C</string>
 </resources>
