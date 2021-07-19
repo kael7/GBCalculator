@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize">40sp</dimen>
+    <dimen name="margin">1dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="button_height">100dp</dimen>
+    <item name="background_alpha" format="float" type="dimen">0.7</item>
+</resources>
