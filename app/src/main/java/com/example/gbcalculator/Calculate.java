@@ -71,7 +71,7 @@ public class Calculate implements Serializable {
         return number_result;
     }
 
-    public int o_equals(String operator){
+    public int o_equals(String operator) {
         switch (operator) {
             case "/":
                 o_divide(number_1, number_2);
@@ -90,5 +90,4 @@ public class Calculate implements Serializable {
         }
         return number_result;
     }
-
 }

@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private Calculate calculate;
-    private EditText editText_result;
+    private TextInputEditText textField_result;
     private String operator;
     private int number_1;
     private int number_2;
@@ -25,29 +27,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        editText_result = findViewById(R.id.editText_result);
+        textField_result = findViewById(R.id.result);
     }
 
     public void NumberClick(View view) {
         Button button1 = (Button) view;
-        editText_result.append(button1.getText());
+        textField_result.append(button1.getText());
     }
 
     public void OperationClick(View view) {
         Button button2 = (Button) view;
-        number_1 = Integer.parseInt(editText_result.getText().toString());
+        number_1 = Integer.parseInt(textField_result.getText().toString());
         ClearClick(view);
         operator = (String) button2.getText();
     }
 
     public void EqualsClick(View view) {
-        number_2 = Integer.parseInt(editText_result.getText().toString());
+        number_2 = Integer.parseInt(textField_result.getText().toString());
         calculate = new Calculate(number_1, number_2, operator);
-        setTextCalculate(editText_result, calculate.o_equals(calculate.getOperator()));
+        setTextCalculate(textField_result, calculate.o_equals(calculate.getOperator()));
     }
 
     public void ClearClick(View view) {
-        editText_result.setText("");
+        textField_result.setText("");
     }
 
     private void setTextCalculate(EditText editText_result, int calculate) {
@@ -66,6 +68,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
         calculate = (Calculate) instanceState.getSerializable(keyCalculates);
-        setTextCalculate(editText_result, calculate.getNumber_result());
+        setTextCalculate(textField_result, calculate.getNumber_result());
     }
 }
