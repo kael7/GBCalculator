@@ -1,11 +1,14 @@
 package com.example.gbcalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private Calculate calculate;
@@ -20,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
     }
-
 
     private void initView() {
         editText_result = findViewById(R.id.editText_result);
@@ -58,10 +60,30 @@ public class MainActivity extends AppCompatActivity {
                 calculate.getNumber_result();
                 break;
         }
-        editText_result.setText(Integer.toString(calculate.getNumber_result()));
+//        editText_result.setText(Integer.toString(calculate.getNumber_result()));
+        setTextCalculate(editText_result, calculate.getNumber_result());
     }
 
     public void ClearClick(View view) {
         editText_result.setText("");
+    }
+
+    private void setTextCalculate(EditText editText_result, int calculate) {
+        editText_result.setText(String.format(Locale.getDefault(), "%d", calculate));
+    }
+
+    private final static String keyCalculates = "Calculates";
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putSerializable(keyCalculates, calculate);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculate = (Calculate) instanceState.getSerializable(keyCalculates);
+        setTextCalculate(editText_result, calculate.getNumber_result());
     }
 }

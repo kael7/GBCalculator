@@ -1,6 +1,8 @@
 package com.example.gbcalculator;
 
-public class Calculate {
+import java.io.Serializable;
+
+public class Calculate implements Serializable {
     private int number_1;
     private int number_2;
     private int number_result;
