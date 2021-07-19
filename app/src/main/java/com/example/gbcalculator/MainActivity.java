@@ -43,25 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void EqualsClick(View view) {
         number_2 = Integer.parseInt(editText_result.getText().toString());
         calculate = new Calculate(number_1, number_2, operator);
-        switch (calculate.getOperator()) {
-            case "/":
-                calculate.o_divide(calculate.getNumber_1(), calculate.getNumber_2());
-                break;
-            case "*":
-                calculate.o_multiply(calculate.getNumber_1(), calculate.getNumber_2());
-                break;
-            case "+":
-                calculate.o_plus(calculate.getNumber_1(), calculate.getNumber_2());
-                break;
-            case "-":
-                calculate.o_minus(calculate.getNumber_1(), calculate.getNumber_2());
-                break;
-            default:
-                calculate.getNumber_result();
-                break;
-        }
-//        editText_result.setText(Integer.toString(calculate.getNumber_result()));
-        setTextCalculate(editText_result, calculate.getNumber_result());
+        setTextCalculate(editText_result, calculate.o_equals(calculate.getOperator()));
     }
 
     public void ClearClick(View view) {

@@ -71,4 +71,24 @@ public class Calculate implements Serializable {
         return number_result;
     }
 
+    public int o_equals(String operator){
+        switch (operator) {
+            case "/":
+                o_divide(number_1, number_2);
+                break;
+            case "*":
+                o_multiply(number_1, number_2);
+                break;
+            case "+":
+                o_plus(number_1, number_2);
+                break;
+            case "-":
+                o_minus(number_1, number_2);
+                break;
+            default:
+                return 0;
+        }
+        return number_result;
+    }
+
 }
