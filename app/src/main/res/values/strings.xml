@@ -23,4 +23,5 @@
     <string name="material_dark">Material dark</string>
     <string name="_return">Return</string>
     <string name="_settings">Settings</string>
+    <string name="_apply">Apply Theme</string>
 </resources>

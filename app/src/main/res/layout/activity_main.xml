@@ -187,6 +187,16 @@
         app:layout_constraintTop_toTopOf="@+id/button_0" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ApplyClick"
+        android:text="@string/_apply"
+        app:layout_constraintBottom_toTopOf="@+id/button_Settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

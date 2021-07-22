@@ -9,12 +9,14 @@ import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements Constants{
+    private AppTheme appTheme;
     private Calculate calculate;
     private TextInputEditText textField_result;
     private String operator;
@@ -34,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Чтобы стартовать активити, надо подготовить интент
-                // В данном случае это будет явный интент, поскольку здесь передаётся класс активити
                 Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
-                // Метод стартует активити, указанную в интенте
                 startActivity(runSettings);
             }
         });
@@ -53,6 +52,25 @@ public class MainActivity extends AppCompatActivity {
         number_1 = Integer.parseInt(textField_result.getText().toString());
         ClearClick(view);
         operator = (String) button2.getText();
+    }
+
+    private void ApplyTheme() {
+//        Button btnApply = findViewById(R.id.button_apply);
+//        btnApply.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setAppTheme(appTheme.getStyle_id());
+//            }
+//        });
+    }
+
+    public void ApplyClick(View view) {
+        Button button3 = (Button) view;
+        try {
+            setAppTheme(appTheme.getStyle_id());
+        } catch (Exception e) {
+            System.out.println("Error Style ID " + appTheme.getStyle_id());
+        }
     }
 
     public void EqualsClick(View view) {
