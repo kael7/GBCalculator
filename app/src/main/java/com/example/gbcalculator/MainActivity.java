@@ -3,7 +3,9 @@ package com.example.gbcalculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         textField_result = findViewById(R.id.result);
+        Button btnSettings = findViewById(R.id.button_Settings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Чтобы стартовать активити, надо подготовить интент
+                // В данном случае это будет явный интент, поскольку здесь передаётся класс активити
+                Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+                // Метод стартует активити, указанную в интенте
+                startActivity(runSettings);
+            }
+        });
     }
 
     public void NumberClick(View view) {

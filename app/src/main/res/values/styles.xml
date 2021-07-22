@@ -7,7 +7,7 @@
         <item name="colorAccent">#009688</item>
     </style>
 
-    <style name="AppStyle" parent="AppTheme">
+    <style name="MyAppStyle" parent="AppTheme">
         <item name="android:textSize">@dimen/textSize</item>
         <item name="android:layout_marginStart">@dimen/margin</item>
         <item name="android:layout_marginEnd">@dimen/margin</item>
